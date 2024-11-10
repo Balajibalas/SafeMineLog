@@ -1,11 +1,11 @@
-import React,{} from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 import Workers from './workers';
 import Supervisors from './Supervisors';
 import CurrentWorkers from './currentworkers';
+import './App.css';
 
 function App() {
-
   return (
     <BrowserRouter>
       <div
@@ -35,31 +35,33 @@ function App() {
             }}
           >
             <li style={{ marginRight: 20 }}>
-              <NavLink to="/" style={{ textDecoration: 'none', color: '#fff', fontSize:25}}>
+              <NavLink to="/" style={{ textDecoration: 'none', color: '#fff', fontSize: 25 }}>
                 Home
               </NavLink>
             </li>
             <li style={{ marginRight: 20 }}>
-              <NavLink to="/workers" style={{ textDecoration: 'none', color: '#fff', fontSize:25 }}>
+              <NavLink to="/workers" style={{ textDecoration: 'none', color: '#fff', fontSize: 25 }}>
                 Workers
               </NavLink>
             </li>
             <li style={{ marginRight: 20 }}>
-              <NavLink to="/Supervisors" style={{ textDecoration: 'none', color: '#fff' ,fontSize:25}}>
+              <NavLink to="/Supervisors" style={{ textDecoration: 'none', color: '#fff', fontSize: 25 }}>
                 Supervisors
               </NavLink>
             </li>
             <li>
-              <NavLink to="/currentworkers" style={{ textDecoration: 'none', color: '#fff' ,fontSize:25}}>
+              <NavLink to="/currentworkers" style={{ textDecoration: 'none', color: '#fff', fontSize: 25 }}>
                 Current Workers
               </NavLink>
             </li>
           </ul>
         </nav>
+
         <div
           style={{
             flex: 1,
             padding: 20,
+            overflowX: 'hidden', 
           }}
         >
           <Routes>
@@ -68,15 +70,67 @@ function App() {
               element={
                 <div
                   style={{
-                    backgroundColor: '#3498db', // blue background
+                    backgroundColor: '#DF7B2EFF',
                     height: '100%',
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    overflow: 'hidden',
                   }}
                 >
-                  <h1>Welcome to the main page!</h1>
+                  <div
+                    style={{
+                      height: '74%',
+                      width: '80%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      backgroundColor: 'white',
+                      borderRadius: '10px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        flex: 1,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        position: 'relative',
+                      }}
+                    >
+                      <img
+                        src="src/LOGO.png"
+                        alt="Main Page Image"
+                        style={{
+                          maxHeight: '80%',
+                          maxWidth: '80%',
+                          margin: '20px',
+                          borderRadius: '10px',
+                        }}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        width: '2px',
+                        backgroundColor: '#ddd',
+                        height: '100%', 
+                        alignSelf: 'stretch', 
+                      }}
+                    ></div>
+
+                    <div
+                      style={{
+                        flex: 1,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '20px',
+                      }}
+                    >
+                      <h1 style={{ fontSize: '2rem', textAlign: 'center' }}>Welcome to the main page!</h1>
+                    </div>
+                  </div>
                 </div>
               }
             />
@@ -85,12 +139,13 @@ function App() {
               element={
                 <div
                   style={{
-                    backgroundColor: 'lightgrey', // orange background
+                    backgroundColor: 'lightgrey',
                     height: '100%',
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    overflowY: 'auto',
                   }}
                 >
                   <Workers />
@@ -102,12 +157,13 @@ function App() {
               element={
                 <div
                   style={{
-                    backgroundColor: 'lightgoldenrodyellow', // green background
+                    backgroundColor: 'lightgoldenrodyellow',
                     height: '100%',
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    overflowY: 'auto',
                   }}
                 >
                   <Supervisors />
@@ -119,12 +175,13 @@ function App() {
               element={
                 <div
                   style={{
-                    backgroundColor: 'lightseagreen', // purple background
+                    backgroundColor: 'lightseagreen',
                     height: '100%',
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
+                    overflowY: 'auto',
                   }}
                 >
                   <CurrentWorkers />
